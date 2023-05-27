@@ -2,3 +2,7 @@
 PUT localhost:8080/profile/user/changePassword/12
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODUxMjUzNjAsImV4cCI6MTY4NTEyODk2MCwiaXNzIjoiTWF6Z2kgcHJvZHVjdGlvbiIsImlkIjoxfQ.FKa-Ews1JEM-GvKti_3O-7wmWhCSaSePwhO2taynx9Y
+###
+PUT localhost:8080/profile/user/changePassword/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2ODUxMjUzNjAsImV4cCI6MTY4NTEyODk2MCwiaXNzIjoiTWF6Z2kgcHJvZHVjdGlvbiIsImlkIjoxfQ.FKa-Ews1JEM-GvKti_3O-7wmWhCSaSePwhO2taynx9Y
