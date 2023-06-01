@@ -11,6 +11,9 @@ import com.company.repository.ProfileRepository;
 import com.company.util.MD5Util;
 import com.company.util.SpringUtil;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -64,7 +67,7 @@ public class ProfileService {
         ProfileEntity profileEntity = currentUser();
         Optional<ProfileEntity> optional = profileRepository.findByEmail(profileEntity.getEmail());
         if (!optional.isPresent()) {
-            throw new BadRequestException("khsbcid isdubcisd isdbcids");
+            throw new BadRequestException("we have not this user");
         }
 
         return entityToDto(optional.get());
@@ -87,6 +90,11 @@ public class ProfileService {
         return profileRepository.findById(id).orElseThrow(() -> {
             throw new ItemNotFoundEseption("Profile Not found");
         });
+    }
+    public  Page<ProfileEntity> getUsers(int pageNumber, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+      return   ProfileRepository.allUsers(pageable);
+
     }
 
     public ProfileEntity currentUser() {
